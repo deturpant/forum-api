@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c41765e9-0c33-4adc-a3ec-5d98c2e70a2e" name="Changes" comment="created config file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/deturpant/Main.java" beforeDir="false" />
+    <list default="true" id="c41765e9-0c33-4adc-a3ec-5d98c2e70a2e" name="Changes" comment="Initialized application class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +39,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Build forum-api.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.Application.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -49,6 +51,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -86,7 +93,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711391368136</updated>
-      <workItem from="1711391370020" duration="664000" />
+      <workItem from="1711391370020" duration="1244000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -112,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711391972795</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Initialized application class">
+      <option name="closed" value="true" />
+      <created>1711392178822</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711392178822</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +137,7 @@
     <MESSAGE value="Init commit" />
     <MESSAGE value="updated dependencies" />
     <MESSAGE value="created config file" />
-    <option name="LAST_COMMIT_MESSAGE" value="created config file" />
+    <MESSAGE value="Initialized application class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initialized application class" />
   </component>
 </project>
