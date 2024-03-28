@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c41765e9-0c33-4adc-a3ec-5d98c2e70a2e" name="Changes" comment="updated application.yml">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/entities/MessageEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/entities/TopicEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/entities/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="c41765e9-0c33-4adc-a3ec-5d98c2e70a2e" name="Changes" comment="Created entities">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/repositories/MessageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/repositories/TopicRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -101,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1711391368136</updated>
       <workItem from="1711391370020" duration="1913000" />
-      <workItem from="1711645593687" duration="804000" />
+      <workItem from="1711645593687" duration="985000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -143,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711392675101</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Created entities">
+      <option name="closed" value="true" />
+      <created>1711646487342</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711646487342</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +163,7 @@
     <MESSAGE value="created config file" />
     <MESSAGE value="Initialized application class" />
     <MESSAGE value="updated application.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated application.yml" />
+    <MESSAGE value="Created entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created entities" />
   </component>
 </project>
