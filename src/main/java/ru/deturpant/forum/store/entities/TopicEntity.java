@@ -3,6 +3,7 @@ package ru.deturpant.forum.store.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,4 +23,6 @@ public class TopicEntity {
     @Builder.Default
     private List<MessageEntity> messages = new ArrayList<>();
 
+    @Builder.Default
+    private Instant createdAt = Instant.now();
 }
