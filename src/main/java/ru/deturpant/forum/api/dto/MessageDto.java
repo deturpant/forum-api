@@ -17,5 +17,7 @@ public class MessageDto {
     @JsonProperty("created_at")
     Instant createdAt;
 
+    String text;
+
     UserDto owner;
 }

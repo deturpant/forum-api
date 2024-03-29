@@ -10,6 +10,7 @@ public class TopicDtoFactory {
         return TopicDto.builder()
                 .id(entity.getId())
                 .createdAt(entity.getCreatedAt())
+                .name(entity.getName())
                 .build();
     }
 }

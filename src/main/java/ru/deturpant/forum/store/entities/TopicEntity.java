@@ -23,6 +23,9 @@ public class TopicEntity {
     @Builder.Default
     private List<MessageEntity> messages = new ArrayList<>();
 
+    String name;
+
+
     @Builder.Default
     private Instant createdAt = Instant.now();
 }

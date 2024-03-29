@@ -4,14 +4,19 @@ import jakarta.transaction.Transactional;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import ru.deturpant.forum.api.dto.UserDto;
 import ru.deturpant.forum.api.exceptions.BadRequestException;
+import ru.deturpant.forum.api.exceptions.NotFoundException;
+import ru.deturpant.forum.api.exceptions.UnathorizedException;
 import ru.deturpant.forum.api.factories.UserDtoFactory;
+import ru.deturpant.forum.api.jwt.JwtAuthenticationResponse;
 import ru.deturpant.forum.api.jwt.JwtTokenProvider;
+import ru.deturpant.forum.api.requests.LoginRequest;
 import ru.deturpant.forum.api.requests.RegRequest;
 import ru.deturpant.forum.store.entities.RoleEntity;
 import ru.deturpant.forum.store.entities.UserEntity;
@@ -54,5 +59,25 @@ public class UserController {
                         .build()
         );
         return userDtoFactory.makeUserDto(user);
+    }
+
+    @PostMapping(LOGIN)
+    public ResponseEntity<?> login(
+            @RequestBody LoginRequest loginRequest
+    )
+    {
+        String username = loginRequest.getUsername();
+        String password = loginRequest.getPassword();
+
+        UserEntity currUser = userRepository
+                .findByUsername(username)
+                .orElseThrow(() -> new NotFoundException("User not found"));
+        if (passwordEncoder.matches(password, currUser.getPassword())) {
+            String token = jwtTokenProvider.generateToken(username);
+            return ResponseEntity.ok(new JwtAuthenticationResponse(token));
+        }
+        else {
+            throw new UnathorizedException("Incorrect password");
+        }
     }
 }

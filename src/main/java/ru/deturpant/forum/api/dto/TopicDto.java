@@ -16,4 +16,6 @@ public class TopicDto {
 
     @JsonProperty("created_at")
     Instant createdAt;
+
+    String name;
 }
