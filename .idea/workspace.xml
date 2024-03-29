@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c41765e9-0c33-4adc-a3ec-5d98c2e70a2e" name="Changes" comment="created Factories for DTOs">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/jwt/JwtAuthenticationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/jwt/JwtTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/jwt/JwtTokenProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/configs/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/entities/RoleEntity.java" afterDir="false" />
+    <list default="true" id="c41765e9-0c33-4adc-a3ec-5d98c2e70a2e" name="Changes" comment="Implemented JWT authorization">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/controllers/MessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/controllers/TopicController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/controllers/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/exceptions/BadRequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/exceptions/CustomErrorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/exceptions/CustomExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/exceptions/ErrorDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/exceptions/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/exceptions/UnathorizedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/requests/RegRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/entities/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/entities/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -107,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1711391368136</updated>
       <workItem from="1711391370020" duration="1913000" />
-      <workItem from="1711645593687" duration="3297000" />
+      <workItem from="1711645593687" duration="4407000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -181,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711647506814</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Implemented JWT authorization">
+      <option name="closed" value="true" />
+      <created>1711709831210</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711709831210</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +207,7 @@
     <MESSAGE value="Created repositories" />
     <MESSAGE value="Updated entites, created DTOs" />
     <MESSAGE value="created Factories for DTOs" />
-    <option name="LAST_COMMIT_MESSAGE" value="created Factories for DTOs" />
+    <MESSAGE value="Implemented JWT authorization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented JWT authorization" />
   </component>
 </project>
