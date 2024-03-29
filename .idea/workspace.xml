@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c41765e9-0c33-4adc-a3ec-5d98c2e70a2e" name="Changes" comment="Updated entites, created DTOs">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/factories/MessageDtoFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/factories/TopicDtoFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/factories/UserDtoFactory.java" afterDir="false" />
+    <list default="true" id="c41765e9-0c33-4adc-a3ec-5d98c2e70a2e" name="Changes" comment="created Factories for DTOs">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/jwt/JwtAuthenticationResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/jwt/JwtTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/jwt/JwtTokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/configs/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/entities/RoleEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/entities/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/entities/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +30,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -101,7 +107,7 @@
       <option name="presentableId" value="Default" />
       <updated>1711391368136</updated>
       <workItem from="1711391370020" duration="1913000" />
-      <workItem from="1711645593687" duration="1897000" />
+      <workItem from="1711645593687" duration="3297000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -167,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711647189155</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="created Factories for DTOs">
+      <option name="closed" value="true" />
+      <created>1711647506814</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711647506814</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +196,7 @@
     <MESSAGE value="Created entities" />
     <MESSAGE value="Created repositories" />
     <MESSAGE value="Updated entites, created DTOs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated entites, created DTOs" />
+    <MESSAGE value="created Factories for DTOs" />
+    <option name="LAST_COMMIT_MESSAGE" value="created Factories for DTOs" />
   </component>
 </project>
