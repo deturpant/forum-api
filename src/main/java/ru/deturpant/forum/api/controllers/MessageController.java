@@ -5,14 +5,19 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import ru.deturpant.forum.api.dto.MessageDto;
 import ru.deturpant.forum.api.exceptions.NotFoundException;
+import ru.deturpant.forum.api.exceptions.UnathorizedException;
 import ru.deturpant.forum.api.factories.MessageDtoFactory;
 import ru.deturpant.forum.api.requests.DelMessageRequest;
 import ru.deturpant.forum.api.requests.EditMessageRequest;
 import ru.deturpant.forum.api.requests.MessageRequest;
+import ru.deturpant.forum.api.services.UserService;
 import ru.deturpant.forum.store.entities.MessageEntity;
 import ru.deturpant.forum.store.entities.TopicEntity;
 import ru.deturpant.forum.store.entities.UserEntity;
@@ -34,6 +39,8 @@ public class MessageController {
     TopicRepository topicRepository;
     UserRepository userRepository;
 
+    @Autowired
+    UserService userService;
     static final String MESSAGE_IN_TOPIC = "/api/users/{user_id}/topics/{topic_id}/messages";
     static final String CREATE_MESSAGE = "/api/messages";
     static final String GET_MESSAGES = "/api/topics/{topic_id}/messages";
@@ -49,6 +56,7 @@ public class MessageController {
         String text = editMessageRequest.getText();
         Long owner_id = editMessageRequest.getOwner_id();
         Long message_id = editMessageRequest.getMessage_id();
+        userService.validateUserAuthentication(owner_id);
         MessageEntity messageEntity = messageRepository.findById(message_id)
                 .orElseThrow(() -> new NotFoundException("Message not found"));
         if (text!= null) {
@@ -65,6 +73,7 @@ public class MessageController {
     {
         Long owner_id = delMessageRequest.getOwner_id();
         Long message_id = delMessageRequest.getMessage_id();
+        userService.validateUserAuthentication(owner_id);
         MessageEntity messageEntity = messageRepository.findById(message_id)
                 .orElseThrow(() -> new NotFoundException("Message not found"));
         messageRepository.delete(messageEntity);
@@ -90,6 +99,7 @@ public class MessageController {
             ){
         Long topicId = messageRequest.getTopic_id();
         Long userId = messageRequest.getOwner_id();
+        userService.validateUserAuthentication(userId);
         String message = messageRequest.getMessage();
         TopicEntity topic = topicRepository.findById(topicId)
                 .orElseThrow(() -> new NotFoundException("Topic not found"));

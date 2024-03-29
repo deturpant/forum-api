@@ -4,24 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c41765e9-0c33-4adc-a3ec-5d98c2e70a2e" name="Changes" comment="Implemented user registration">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/requests/DelMessageRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/requests/EditMessageRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/requests/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/requests/MessageRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/requests/TopicRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/configs/SwaggerConfig.java" afterDir="false" />
+    <list default="true" id="c41765e9-0c33-4adc-a3ec-5d98c2e70a2e" name="Changes" comment="Implemented main controllers">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/controllers/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/controllers/MessageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/controllers/TopicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/controllers/TopicController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/dto/MessageDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/dto/MessageDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/dto/TopicDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/dto/TopicDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/factories/MessageDtoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/factories/MessageDtoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/factories/TopicDtoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/api/factories/TopicDtoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/configs/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/entities/TopicEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/deturpant/forum/store/entities/TopicEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1711391368136</updated>
       <workItem from="1711391370020" duration="1913000" />
-      <workItem from="1711645593687" duration="11463000" />
+      <workItem from="1711645593687" duration="12715000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -213,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711710986784</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Implemented main controllers">
+      <option name="closed" value="true" />
+      <created>1711718374919</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1711718374919</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +238,7 @@
     <MESSAGE value="Implemented JWT authorization" />
     <MESSAGE value="Created custom exceptions" />
     <MESSAGE value="Implemented user registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented user registration" />
+    <MESSAGE value="Implemented main controllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented main controllers" />
   </component>
 </project>

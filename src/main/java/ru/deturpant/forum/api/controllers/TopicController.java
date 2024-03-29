@@ -4,14 +4,19 @@ import jakarta.transaction.Transactional;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import ru.deturpant.forum.api.dto.TopicDto;
 import ru.deturpant.forum.api.exceptions.NotFoundException;
+import ru.deturpant.forum.api.exceptions.UnathorizedException;
 import ru.deturpant.forum.api.factories.TopicDtoFactory;
 import ru.deturpant.forum.api.requests.TopicRequest;
+import ru.deturpant.forum.api.services.UserService;
 import ru.deturpant.forum.store.entities.MessageEntity;
 import ru.deturpant.forum.store.entities.TopicEntity;
 import ru.deturpant.forum.store.entities.UserEntity;
@@ -33,6 +38,8 @@ public class TopicController {
     UserRepository userRepository;
     MessageRepository messageRepository;
 
+    @Autowired
+    UserService userService;
     static final String TOPICS = "/api/topics";
 
     @GetMapping(TOPICS)
@@ -53,7 +60,7 @@ public class TopicController {
         String message = topicRequest.getMessage();
         UserEntity user = userRepository.findById(owner_id)
                 .orElseThrow(() -> new NotFoundException("User not found"));
-
+        userService.validateUserAuthentication(owner_id);
         TopicEntity topic = topicRepository.saveAndFlush(
                 TopicEntity.builder()
                         .createdAt(Instant.now())
