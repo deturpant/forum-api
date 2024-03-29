@@ -9,10 +9,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import ru.deturpant.forum.api.dto.UserDto;
+import ru.deturpant.forum.api.exceptions.BadRequestException;
 import ru.deturpant.forum.api.factories.UserDtoFactory;
 import ru.deturpant.forum.api.jwt.JwtTokenProvider;
 import ru.deturpant.forum.api.requests.RegRequest;
+import ru.deturpant.forum.store.entities.RoleEntity;
+import ru.deturpant.forum.store.entities.UserEntity;
 import ru.deturpant.forum.store.repositories.UserRepository;
+
+import java.time.Instant;
 
 @RestController
 @RequiredArgsConstructor
@@ -35,6 +40,19 @@ public class UserController {
             ) {
         String username = regRequest.getUsername();
         String password = regRequest.getPassword();
-
+        userRepository.findByUsername(username)
+                .ifPresent(user -> {
+                    throw new BadRequestException(String.format("User \"%s\" exists", username));
+                });
+        String hashedPassword = passwordEncoder.encode(password);
+        UserEntity user = userRepository.saveAndFlush(
+                UserEntity.builder()
+                        .createdAt(Instant.now())
+                        .password(hashedPassword)
+                        .role(RoleEntity.USER)
+                        .username(username)
+                        .build()
+        );
+        return userDtoFactory.makeUserDto(user);
     }
 }
