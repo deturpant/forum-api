@@ -1,5 +1,7 @@
 package ru.deturpant.forum.api.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -43,6 +45,7 @@ public class TopicController {
     static final String TOPICS = "/api/topics";
 
     @GetMapping(TOPICS)
+    @Operation(summary = "Get all available topics", description = "Get all available topics")
     List<TopicDto> getTopics()
     {
         List<TopicEntity> topics = topicRepository.findAll();
@@ -52,6 +55,8 @@ public class TopicController {
     }
 
     @PostMapping(TOPICS)
+    @Operation(summary = "Create topic with message", description = "Create topic with message")
+    @SecurityRequirement(name = "Bearer Authentication")
     TopicDto createTopic(
             @RequestBody TopicRequest topicRequest
             ) {

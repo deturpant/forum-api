@@ -1,5 +1,7 @@
 package ru.deturpant.forum.api.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -49,6 +51,8 @@ public class MessageController {
     static final String DEL_MESSAGE = "/api/messages";
 
     @PutMapping(EDIT_MESSAGE)
+    @Operation(summary = "Edit message", description = "Edit message")
+    @SecurityRequirement(name = "Bearer Authentication")
     MessageDto editMessage(
             @RequestBody EditMessageRequest editMessageRequest
             )
@@ -67,6 +71,8 @@ public class MessageController {
     }
 
     @DeleteMapping(DEL_MESSAGE)
+    @Operation(summary = "Delete message", description = "Delete message")
+    @SecurityRequirement(name = "Bearer Authentication")
     ResponseEntity<?> deleteMessage(
             @RequestBody DelMessageRequest delMessageRequest
     )
@@ -81,6 +87,7 @@ public class MessageController {
     }
 
     @GetMapping(GET_MESSAGES)
+    @Operation(summary = "Get all messages from topic", description = "Get all messages from topic")
     List<MessageDto> getMessages(
             @PathVariable("topic_id") Long topicId
     ) {
@@ -93,6 +100,8 @@ public class MessageController {
     }
 
     @PostMapping(CREATE_MESSAGE)
+    @Operation(summary = "Create message", description = "Create message")
+    @SecurityRequirement(name = "Bearer Authentication")
     MessageDto createMessage(
             @RequestBody MessageRequest messageRequest
 

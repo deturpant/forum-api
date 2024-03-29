@@ -1,5 +1,7 @@
 package ru.deturpant.forum.api.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -40,6 +42,7 @@ public class UserController {
     static final String IS_AUTH = "/api/auth";
 
     @PostMapping(CREATE_USER)
+    @Operation(summary = "Registration", description = "Registration")
     public UserDto createUser(
             @RequestBody RegRequest regRequest
             ) {
@@ -62,6 +65,7 @@ public class UserController {
     }
 
     @PostMapping(LOGIN)
+    @Operation(summary = "User login", description = "User login")
     public ResponseEntity<?> login(
             @RequestBody LoginRequest loginRequest
     )
